@@ -1,0 +1,225 @@
+:root {
+  color-scheme: light;
+  --text: #1f2328;
+  --muted: #59636e;
+  --border: #d1d9e0;
+  --surface: #ffffff;
+  --background: #f6f8fa;
+  --accent: #0969da;
+  --accent-hover: #0757b5;
+  --success-bg: #dafbe1;
+  --success-border: #4ac26b;
+  --error: #cf222e;
+  --error-bg: #ffebe9;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+}
+
+.page {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 1.75rem;
+}
+
+.page-header p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.page-content {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.card h2 {
+  margin: 0 0 16px;
+  font-size: 1.125rem;
+}
+
+.payout-form {
+  display: grid;
+  gap: 16px;
+}
+
+/* Fields */
+
+.field {
+  display: grid;
+  gap: 4px;
+}
+
+.field label {
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.field input {
+  font: inherit;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+}
+
+.field input:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+}
+
+.field input[aria-invalid='true'] {
+  border-color: var(--error);
+}
+
+.field input:disabled {
+  background: var(--background);
+  color: var(--muted);
+}
+
+.field-hint,
+.field-error {
+  margin: 0;
+  font-size: 0.8125rem;
+}
+
+.field-hint {
+  color: var(--muted);
+}
+
+.field-error {
+  color: var(--error);
+}
+
+/* Provider selector */
+
+.provider-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.provider-selector legend {
+  margin-bottom: 4px;
+  padding: 0;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.provider-option {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 8px;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.provider-option:has(input:checked) {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+.provider-label {
+  font-weight: 600;
+}
+
+.provider-description {
+  grid-column: 2;
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+/* Buttons */
+
+.form-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.button {
+  font: inherit;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.button-primary {
+  background: var(--accent);
+  color: #ffffff;
+}
+
+.button-primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.button-secondary {
+  background: var(--surface);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Result */
+
+.result {
+  padding: 12px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.result-neutral {
+  color: var(--muted);
+}
+
+.result-success {
+  background: var(--success-bg);
+  border-color: var(--success-border);
+}
+
+.result-error {
+  background: var(--error-bg);
+  border-color: var(--error);
+}
+
+.result-title {
+  margin: 0 0 4px;
+  font-weight: 600;
+}
